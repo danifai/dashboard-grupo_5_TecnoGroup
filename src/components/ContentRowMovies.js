@@ -1,31 +1,33 @@
 import React from 'react';
 import SmallCard from './SmallCard';
 
-let productInDataBase = {
-    color:   "primary",
-    titulo: "Movies in Data Base",
-    valor: 21,
-    icono: "fas fa-film",
-}
-
-let amount ={
-    color:   "success",
-    titulo: "Total awards",
-    valor: 79,
-    icono: "fas fa-award",
-}
-
-let user = {
-    color:   "warning",
-    titulo: "Actors quantity",
-    valor: 49,
-    icono: "fas fa-user",
-}
-
-let cardProps = [productInDataBase,amount,user];
 
 
-function ContentRowTop(){
+
+function ContentRowTop(props){
+    let productInDataBase = {
+        color:   "primary",
+        titulo: "Products Quantity",
+        valor: props.productsTotal,
+        icono: "fas fa-film",
+    }
+    
+    let amount ={
+        color:   "success",
+        titulo: "Users Quantity",
+        valor: props.usersTotal,
+        icono: "fas fa-user",
+    }
+    
+    let user = {
+        color:   "warning",
+        titulo: "Categories quantity",
+        valor: props.categoriesTotal,
+        icono: "fas fa-user",
+    }
+    
+    let cardProps = [productInDataBase,amount,user];
+
     return (
         <React.Fragment>
         {/*<!-- Content Row -->*/}
